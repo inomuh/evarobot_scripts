@@ -1,6 +1,6 @@
 #!/bin/bash
 limit=100
-ntp_server=192.168.3.70
+ntp_server=192.168.10.60
 sizeofip=${#ntp_server}
 echo $sizeofip
 #offsets=$(ntpq -nc peers | tail -n +3 | cut -c 62-66 | tr -d '-')
@@ -11,7 +11,7 @@ while [ $loop == 1 ]; do
 	k=0
 	j=0
 	offsets=$(ntpq -nc peers | tail -n +3 | cut -c 62-66 | tr -d '-')
-	server_ip=$(ntpq -nc peers | tail -n +3 | cut -c 2-13 | tr -d '-')
+	server_ip=$(ntpq -nc peers | tail -n +3 | cut -c 2-14 | tr -d '-')
 	refid=$(ntpq -nc peers | tail -n +3 | cut -c 18-25 | tr -d '-')
 	for server_ip in ${server_ip}; do
 		if [ "$server_ip" == "$ntp_server" ]; then
