@@ -3,6 +3,7 @@ limit=100
 ntp_server=192.168.10.60
 sizeofip=${#ntp_server}
 echo $sizeofip
+
 #offsets=$(ntpq -nc peers | tail -n +3 | cut -c 62-66 | tr -d '-')
 #server_ip=$(ntpq -nc peers | tail -n +3 | cut -c 2-13 | tr -d '-')
 loop=1
@@ -10,6 +11,7 @@ while [ $loop == 1 ]; do
 	i=0
 	k=0
 	j=0
+	sudo sntp -s $ntp_server
 	offsets=$(ntpq -nc peers | tail -n +3 | cut -c 62-66 | tr -d '-')
 	server_ip=$(ntpq -nc peers | tail -n +3 | cut -c 2-14 | tr -d '-')
 	refid=$(ntpq -nc peers | tail -n +3 | cut -c 18-25 | tr -d '-')

@@ -14,7 +14,7 @@
 . /home/pi/catkin_ws/devel/setup.bash
 . /lib/lsb/init-functions
 
-export ROS_MASTER_URI=http://evarobotma:11311
+export ROS_MASTER_URI=http://evarobot:11311
 
 HOME=/root
 rospack profile > /dev/null
